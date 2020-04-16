@@ -1,0 +1,164 @@
+<html>
+    <style>
+        body{
+                background-color: white;
+                margin: 0;
+                padding: 0;
+                font-family: 'Ubuntu', sans-serif;
+                direction: ltr;
+            }
+            /*====== Start SigIn ======*/
+            .signin{
+                background: black;
+                color:#fff;
+                padding: 2px 3px;
+                overflow: hidden;
+            }
+            .signin .logo{
+                float: left;
+                width: 100%;
+                text-align: center;
+            }
+            .signin .logo h2{
+                letter-spacing: 1px;
+                font-size: 30px;
+            }
+            .signin .logo h2 span{letter-spacing: -2px;}
+            .signin .frm{
+                float: right;
+                margin-right: 94px;
+                margin-top: 22px;
+            }
+
+            /*====== End SigIn ======*/
+            .signup{
+                width: 600px;
+                margin: 10px auto;
+                background-color: #FFF;
+                padding: 10px;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            .signup > h1{
+                text-align: center;
+                font-size: 33px;
+                color: #757575;
+                font-weight: 300;
+            }
+            .signup > input{
+                display: block;
+            }
+
+
+
+            /*====== Start Footer ======*/
+
+            footer{
+                background-color: black;
+                text-align: center;
+                padding: 5px;
+                color:#fff;
+            }
+
+
+
+            /*====== End Footer ======*/
+             select:invalid { color: gray; }
+
+           table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+   font-size: 16px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.center {
+  text-align: center;
+  border: 3px solid orange;
+}
+        </style>
+    <head>
+
+        <title>COVID-19</title>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    </head>
+    <body>
+        <div class="signin">
+                <div class="logo">
+                    <h2> COVID-19 TRACKER    MAHARASTRA</h2>
+                </div>
+
+        </div>
+
+       <marquee> <h3> |&#10042;| Wash your hands &#128080; regularly with soap and water, or clean them with alcohol-based hand rub.&#128080;  &nbsp&nbsp&nbsp |&#10042;| &nbsp&nbsp&nbsp   Maintain at least 1 metre distance between you and people coughing or sneezing.  &nbsp&nbsp&nbsp |&#10042;|  &nbsp&nbsp&nbsp &#127973;  Avoid touching your face. &#127973; &nbsp&nbsp&nbsp |&#10042;|&nbsp&nbsp&nbsp  &#127968; Stay home if you feel unwell. &#127968;  &nbsp&nbsp&nbsp  |&#10042;|   </h3></marquee>
+        <hr>
+        <div class="signup">
+            <h1>&#9759;Maharastra&#9759;</h1>
+           <table>
+ <tr>
+    <td>
+      State
+    </td>
+    <td>
+      Confirmed
+    </td>
+    <td>
+     Recovered
+    </td>
+    <td>
+      Deaths
+    </td>
+  </tr>
+  {% for dictionary in result2.items()%}
+      <tr>
+        <td>
+          <h3> {{ dictionary[1].name }}   </h3>
+        </td>
+        <td>
+          <h3>{{ dictionary[1].confirmed }}</h3>
+        </td>
+        <td>
+          <h3> {{ dictionary[1].recovered }}   </h3>
+        </td>
+        <td>
+          <h3>{{ dictionary[1].deaths }}</h3>
+        </td>
+      </tr>
+  {% endfor %}
+</table>
+        </div>
+        <div class="signup">
+            <table >
+<tr>
+    <td > District </td>
+    <td  >Confirmed </td>
+  </tr>
+  {% for dictionary in result.items()%}
+      <tr>
+        <td>
+          <h3>{{ dictionary[0] }}</h3>
+        </td>
+        <td>
+          <h3>{{ dictionary[1].confirmed }}</h3>
+        </td>
+      </tr>
+  {% endfor %}
+
+
+</table>
+
+        </div>
+        <footer>
+            <p>	&copy; Design by Amey Manekar </p>
+        </footer>
+    </body>
+</html>
